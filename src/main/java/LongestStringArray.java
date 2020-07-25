@@ -1,25 +1,21 @@
+
 public class LongestStringArray {
-    public void longString(String[] str){
-
-        for (int i = 0; i < str.length; i++) {
-          String index = str[i];
-
-
-            if( index.length() > str.length ){
-                System.out.println(str[i]);
+    public void getLongest(String[] array) {
+        String str = "";
+        int arrayLength = array[0].length();
+        for (int i = 0; i < array.length; i++) {
+            if (arrayLength < array[i].length()) {
+                arrayLength = array[i].length();
+                str = array[i];
             }
-
+            System.out.println("");
         }
+        System.out.println( str + " is the longest string");
     }
+    public static void main(String[] args) {
+        String[] Arry = {"the", "quick", "brown", "fox", "ate", "my", "chickens"};
+        LongestStringArray longString = new LongestStringArray();
 
-    public static void main(String[] str) {
-        String[] string = {"the", "quick","brown","fox","ate","my", "chickens"};
-
-        LongestStringArray st = new LongestStringArray();
-        st.longString(string);
+        longString.getLongest(Arry);
     }
-
-
 }
-
-
